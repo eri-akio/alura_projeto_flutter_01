@@ -48,7 +48,7 @@ class _TaskState extends State<Task> {
   int nivel = 0;
 
   @override
-  Widget build(BuildContext context) {  
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -84,15 +84,34 @@ class _TaskState extends State<Task> {
                           onPressed: () {
                             setState(() {
                               nivel++;
-                            });                  
-                            print(nivel);                          },
+                            });
+                            print(nivel);
+                          },
                           child: Icon(Icons.arrow_drop_up))
                     ],
                   ),
                 ),
-                Text(
-                  "Nivel: $nivel",
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Container(
+                        child: LinearProgressIndicator(
+                          color: Colors.white,
+                          value: nivel / 10,
+                        ),
+                        width: 200,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        "Nivel: $nivel",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
