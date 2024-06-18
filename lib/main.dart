@@ -22,12 +22,13 @@ class MyApp extends StatelessWidget {
         ),
         body: ListView(
           children: [
-            Task("Aprender Flutter"),
-            Task("Aprender Dart"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
-            Task("Meditar"),
+            Task("Aprender Flutter",
+                "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg"),
+            Task("Aprender Dart", "https://blog.codapp.com.br/wp-content/uploads/2023/02/9nmssvliot8mzseyuqdx.png"),
+            Task("Meditar", "https://manhattanmentalhealthcounseling.com/wp-content/uploads/2019/06/Top-5-Scientific-Findings-on-MeditationMindfulness-881x710.jpeg"),
+            Task("Jogar", "https://i.ibb.co/tB29PZB/kako-epifania-2022-2-c-pia.jpg"),
+            Task("Ler", "https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg"),
+            Task("Andar de bike", "https://images.pexels.com/photos/161172/cycling-bike-trail-sport-161172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
           ],
         ),
         floatingActionButton: FloatingActionButton(onPressed: () {}),
@@ -38,8 +39,9 @@ class MyApp extends StatelessWidget {
 
 class Task extends StatefulWidget {
   final String nome;
+  final String foto;
 
-  const Task(this.nome, {super.key});
+  const Task(this.nome, this.foto, {super.key});
 
   @override
   State<Task> createState() => _TaskState();
@@ -71,6 +73,10 @@ class _TaskState extends State<Task> {
                         color: Colors.black26,
                         width: 72,
                         height: 100,
+                        child: Image.network(
+                          widget.foto,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       Container(
                           width: 200,
@@ -96,7 +102,10 @@ class _TaskState extends State<Task> {
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Icon(Icons.arrow_drop_up),
-                                Text('UP', style: TextStyle(fontSize: 12),),
+                                Text(
+                                  'UP',
+                                  style: TextStyle(fontSize: 12),
+                                ),
                               ],
                             )),
                       )
