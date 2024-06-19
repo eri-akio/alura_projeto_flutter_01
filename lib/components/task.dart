@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:primeiro_projeto/difficulty.dart';
+import 'package:primeiro_projeto/components/difficulty.dart';
 
 class Task extends StatefulWidget {
   final String nome;
@@ -19,7 +19,6 @@ class _TaskState extends State<Task> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
         child: Stack(
           children: [
             Container(
@@ -32,10 +31,10 @@ class _TaskState extends State<Task> {
             Column(
               children: [
                 Container(
-                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4),
-                  color: Colors.white,
-                 ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: Colors.white,
+                  ),
                   height: 100,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,11 +58,11 @@ class _TaskState extends State<Task> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
+                          SizedBox(
                               width: 200,
                               child: Text(
                                 widget.nome,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 24,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -73,7 +72,7 @@ class _TaskState extends State<Task> {
                           ),
                         ],
                       ),
-                      Container(
+                      SizedBox(
                         height: 62,
                         width: 69,
                         child: ElevatedButton(
@@ -81,11 +80,11 @@ class _TaskState extends State<Task> {
                               setState(() {
                                 nivel++;
                               });
-                              print(nivel);
+                              // print(nivel);
                             },
-                            child: Container(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              child: const Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Icon(Icons.arrow_drop_up),
@@ -95,7 +94,6 @@ class _TaskState extends State<Task> {
                                   ),
                                 ],
                               ),
-                            )
                             ),
                       )
                     ],
@@ -106,7 +104,7 @@ class _TaskState extends State<Task> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8),
-                      child: Container(
+                      child: SizedBox(
                         child: LinearProgressIndicator(
                           color: Colors.white,
                           value: (widget.dificuldade > 0)
@@ -117,10 +115,10 @@ class _TaskState extends State<Task> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       child: Text(
                         "Nivel: $nivel",
-                        style: TextStyle(color: Colors.white, fontSize: 16),
+                        style: const TextStyle(color: Colors.white, fontSize: 16),
                       ),
                     ),
                   ],
@@ -129,7 +127,6 @@ class _TaskState extends State<Task> {
             ),
           ],
         ),
-      ),
     );
   }
 }
