@@ -16,7 +16,8 @@ class _InitialScreenState extends State<InitialScreen> {
     return Scaffold(
         appBar: AppBar(
           leading: Container(),
-          title: const Text('Tarefas'),
+          title: const Text('Tarefas', style: TextStyle(color: Colors.white),),
+          backgroundColor: Colors.blue,
         ),
         body: AnimatedOpacity(
           opacity: opacidade ? 1 : 0,
