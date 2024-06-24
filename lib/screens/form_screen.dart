@@ -131,6 +131,7 @@ class _FormScreenState extends State<FormScreen> {
                             content: Text('Salvando nova Tarefa'),
                           ),
                         );
+                        Navigator.pop(context);
                       }
                     },
                     child: Text("Adicionar!"),
