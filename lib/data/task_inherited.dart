@@ -8,14 +8,14 @@ class TaskInherited extends InheritedWidget {
   }) : super(key: key, child: child);
 
   final List<Task> taskList = [
-    Task('Aprender Flutter', 'assets/images/dash.png', 3  ),
+    Task('Aprender Flutter', 'assets/images/dash.png', 3),
     Task('Andar de Bike', 'assets/images/bike.webp', 2),
     Task('Meditar', 'assets/images/meditar.jpeg', 5),
     Task('Ler', 'assets/images/livro.jpg', 4),
     Task('Jogar', 'assets/images/jogar.jpg', 1),
   ];
 
-  void newTask(String name, String photo,int difficulty){
+  void newTask(String name, String photo, int difficulty) {
     taskList.add(Task(name, photo, difficulty));
   }
 
@@ -30,5 +30,4 @@ class TaskInherited extends InheritedWidget {
   bool updateShouldNotify(TaskInherited oldWidget) {
     return oldWidget.taskList.length != taskList.length;
   }
-
 }

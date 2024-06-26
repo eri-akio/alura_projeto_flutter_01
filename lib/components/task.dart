@@ -5,17 +5,21 @@ class Task extends StatefulWidget {
   final String nome;
   final String foto;
   final int dificuldade;
-
-  Task(this.nome, this.foto, this.dificuldade, {super.key});
-
   int nivel = 0;
+
+  Task(
+    this.nome,
+    this.foto,
+    this.dificuldade, [
+    this.nivel = 0,
+    Key? key,
+  ]) : super(key: key);
 
   @override
   State<Task> createState() => _TaskState();
 }
 
 class _TaskState extends State<Task> {
-  
   bool assetOrNetwork() {
     if (widget.foto.contains('http')) {
       return false;
@@ -85,7 +89,7 @@ class _TaskState extends State<Task> {
                         ),
                       ],
                     ),
-                    Container(
+                    SizedBox(
                       height: 62,
                       width: 70,
                       child: ElevatedButton(

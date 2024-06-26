@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:primeiro_projeto/components/task.dart';
 import 'package:primeiro_projeto/data/task_inherited.dart';
 import 'package:primeiro_projeto/screens/form_screen.dart';
 
